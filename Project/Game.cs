@@ -51,9 +51,10 @@ namespace CastleGrimtol.Project
                 showRoom();
                 System.Console.WriteLine($@"
              ------------------------------
-                 1. Pick up item
-                 2. Move Forward
-                 3. Move Back
+             You can go forward, or go back
+             You can take an item, or use an item
+             Or type help at any time to get these instructions,
+             or enter q or quit to exit the game 
              ");
                 if (Player.Inventory.ContainsKey("key"))
                 {
@@ -85,28 +86,28 @@ namespace CastleGrimtol.Project
             }
             string choice = Console.ReadLine();
             choice = choice != null ? choice.ToLower() : "";
-            if (choice == "help")
+            if (choice == "help" || choice == "h")
             {
                 System.Console.WriteLine("Help is a fickle thing...");
                 return;
             }
-            else if (choice == "1")
+            else if (choice == "take" || choice =="take key" || choice == "1" || choice == "take item")
             {
                 TakeItem();
             }
-            else if (choice == "2")
+            else if (choice == "forward" ||choice == "go forward" || choice == "2" || choice == "f")
             {
                 Move("forward");
             }
-            else if (choice == "3")
+            else if (choice == "back" || choice == "go back" || choice == "3" || choice == "b")
             {
                 Move("back");
             }
-            else if (choice == "4" && Player.Inventory.ContainsKey("key"))
+            else if (choice == "use" || choice == "use item" || choice == "use key" || choice == "4" && Player.Inventory.ContainsKey("key"))
             {
                 UseKey();
             }
-            else if(choice == "q"){
+            else if(choice == "q" || choice == "quit" || choice == "exit"){
                 Playing = false;
             }
             else
