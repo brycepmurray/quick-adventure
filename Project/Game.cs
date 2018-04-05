@@ -47,6 +47,11 @@ namespace CastleGrimtol.Project
         {
             while (Playing)
             {
+                //Quick guide
+                // Room One is where the Key is
+                //Room 2 is possible death when using the key  in room two you will die
+                //Room three unlocks the door to Room 4
+                //Room 4 is the end Room and Win
 
                 showRoom();
                 System.Console.WriteLine($@"
