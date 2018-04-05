@@ -153,7 +153,7 @@ namespace CastleGrimtol.Project
 
         public void UseKey()
         {
-            if (currentRoom.Name == "Room 2")
+            if (currentRoom.Name == "Room 2" && Player.Inventory.ContainsKey("key"))
             {
                 Playing = false;
                 System.Console.WriteLine($@"
