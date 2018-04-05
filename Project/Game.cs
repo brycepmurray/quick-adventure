@@ -159,7 +159,7 @@ namespace CastleGrimtol.Project
                                                    YOU LOSE.
                     ");
             }
-            else if (currentRoom.Name == "Room 3")
+            else if (currentRoom.Name == "Room 3" && Player.Inventory.ContainsKey("key"))
             {
                 if (currentRoom.Exits.ContainsKey("forward"))
                 {
